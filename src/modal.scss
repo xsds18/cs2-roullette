@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.modalWindow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.modalBtn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

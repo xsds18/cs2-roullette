@@ -50,7 +50,7 @@ function App() {
     setVisibleItems(fullList);
 
     const distance = -8000;
-    const duration = 5000;
+    const duration = 3000;
     const itemWidth = 110;
     const centerOffset = 3;
 
