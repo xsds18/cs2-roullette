@@ -1,110 +1,163 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap');
 
-body {
+* {
+  color: #fff;
   margin: 0;
-  font-family: 'Nunito', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #6a5be2;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    margin-bottom: 2vh;
+    font-size: 30pt;
+  }
+
+  p {
+    font-size: 24pt;
+    margin-bottom: 2vh;
+  }
+}
+
+.mainText {
+  margin-bottom: 10vh;
+  color: #fff;
+}
+
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  width: 100%;
   height: 100vh;
+  background-color: #120f1f;
 }
 
-.App {
-  width: 500px;
+.roulette {
+  width: 880px; /* Видимая область */
+  height: 20vh;
+  overflow: hidden;
+  border: 2px solid #f1e7e7;
+  background-color: #5c5656;
+  box-shadow: 1px 1px 15px 15px #ce3434;
   border-radius: 30px;
-  padding: 40px;
-  background-color: #fff;
+  margin: 0 auto 20px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
-  .result {
+.roulette-track {
+  display: flex;
+  transition: transform 0.5s ease-out; /* Для плавности */
+}
+
+.roulette-item {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+.item-img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.startRoulleteBtn {
+  margin-top: 10vh;
+  width: 40vh;
+  height: 10vh;
+  background-color: #141010;
+  cursor: pointer;
+  font-size: 30pt;
+  color: #ffffff;
+  box-shadow: 1px 1px 10px 10px #ce3434;
+  border-radius: 20px;
+  border: 0;
+  
+}
+
+.startRoulleteBtn:hover {
+  background-color: #ffffff;
+  box-shadow: 1px 1px 10px 10px #ce3434;
+  color: #000000;
+  transition: 1s;
+}
+
+.roulette::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%; /* Центрируем по горизонтали */
+  width: 2px; /* Толщина линии */
+  background-color: red; /* Цвет линии */
+  transform: translateX(-50%); /* Для выравнивания точно по центру */
+  z-index: 10; /* Чтобы линия была поверх содержимого */
+}
+
+.result {
+  margin-top: 20px;
+  text-align: center;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .result-item {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
     text-align: center;
-
-    button {
-      font-weight: bold;
-      font-family: 'Nunito', sans-serif;
-      border-radius: 30px;
-      border: 0;
-      padding: 15px 30px;
-      font-size: 20px;
-      background-color: darken(#ff006e, 3%);
-      color: #fff;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-
-    h2 {
-      margin-bottom: 0;
-    }
-
-    img {
-      width: 150px;
-    }
   }
 
-  .progress {
-    height: 10px;
-    border-radius: 30px;
-    background-color: rgb(232, 232, 232);
-    margin-bottom: 25px;
-
-    &__inner {
-      height: 100%;
-      border-radius: 30px;
-      width: 80%;
-      background: rgb(18, 231, 48);
-      transition: all 0.3s ease-in-out;
-      background: linear-gradient(90deg, rgba(18, 231, 48, 1) 0%, rgba(0, 212, 255, 1) 100%);
-    }
-  }
-
-  &:before,
-  &:after {
-    content: '';
-    display: block;
+  .item-img {
+    width: 50px;
     height: 50px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-bottom: 5px;
   }
+}
 
-  &:before {
-    width: 95%;
-    bottom: -10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    z-index: 0;
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    font-size: 30pt;
+    margin-bottom: 2vh;
   }
-
-  &:after {
-    width: 90%;
-    bottom: -20px;
-    background-color: rgba(255, 255, 255, 0.3);
-    z-index: 1;
+  input {
+    width: 20vh;
+    height: 3vh;
+    color: #000;
   }
-
-  h1 {
-    margin: 0;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      padding: 15px;
-      border: 2px solid rgba(0, 0, 0, 0.1);
-      border-radius: 15px;
-      margin-bottom: 10px;
-      cursor: pointer;
-      transition: all 0.1s ease-in-out;
-
-      &:hover {
-        border: 2px solid rgba(0, 0, 0, 0.3);
-      }
-    }
+  button {
+    width: 15vh;
+    height: 4vh;
+    background-color: #ce3434;
+    border: none;
+    border-radius: 30px;
+    margin-top: 2vh;
   }
 }

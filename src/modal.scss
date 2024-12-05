@@ -1,0 +1,93 @@
+.cont-modal {
+    position: relative;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемняющий фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0; /* Начальная прозрачность */
+    visibility: hidden; /* Скрываем элемент */
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.modalOverlay.show {
+    opacity: 1; /* Полная непрозрачность */
+    visibility: visible; /* Делаем элемент видимым */
+}
+
+.modalWindow {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+    form {
+        display: flex;
+        flex-direction: column;
+        label {
+            margin: 0vh 1vh;
+            color: #000;
+            text-align: center;
+        }
+        input {
+            color: #000;
+            height: 2vh;
+            margin: 1vh;
+        }
+    }
+}
+
+.modalWindow.show {
+    transform: scale(1); /* Полный масштаб */
+}
+
+.closeBtn {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: max-content;
+    height: 4vh;
+    padding: 1vh;
+    margin-left: auto;
+}
+
+button[type="submit"] {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modalBtn {
+    position: fixed;
+    right: 1vh;
+    bottom: 1vh;
+    width: 20vh;
+    height: 5vh;
+    cursor: pointer;
+    background-color: #141010;
+    box-shadow: 1px 1px 5px 5px #ce3434;
+    border-style: none;
+}
+
+.modalBtn:hover {
+    background-color: #ffffff;
+    box-shadow: 1px 1px 10px 10px #ce3434;
+    color: #000000;
+    transition: 1s;
+  }
