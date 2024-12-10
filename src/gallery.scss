@@ -1,0 +1,39 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30vh;
+    flex-direction: row;
+
+    gap: 20px;
+    position: relative;
+  }
+  
+  .image-container {
+    position: relative;
+    cursor: pointer;
+    width: 170px; /* Установите желаемую ширину */
+    height: 170px; /* Установите желаемую высоту */
+  }
+  
+  .img-prev {
+    width: 100%; /* Занять всю ширину контейнера */
+    height: 100%; /* Занять всю высоту контейнера */
+    object-fit: cover; /* Сохранить пропорции изображения */
+  }
+  
+  .preview-modal {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 999; /* Чтобы превью было выше других элементов */
+    transform: translate(-50%, -300%); /* Центрируем по горизонтали и поднимаем над изображением */
+  }
+  
+  .preview-image {
+    max-width: 200px;
+    max-height: 200px;
+  }
