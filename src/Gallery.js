@@ -8,12 +8,16 @@ const Gallery = ({ items }) => {
 
   const handleMouseEnter = (event, imgSrc) => {
     const rect = event.currentTarget.getBoundingClientRect();
-    setPosition({
-      top: rect.top - 150, // Позиция сверху (можно настроить)
-      left: rect.left + rect.width / 2 - 10, // Центрируем по горизонтали
-    });
+    const previewWidth = 200; // Ширина предварительного просмотра
+    const previewHeight = 150; // Высота предварительного просмотра
+
+    // Вычисляем позицию для предварительного просмотра
+    const top = rect.top + window.scrollY - previewHeight + 20; // 10 - отступ сверху
+    const left = rect.left + window.scrollX + (rect.width / 2) - (previewWidth / 2) + 90; // Центрируем по горизонтали
+
+    setPosition({ top, left });
     setHoveredImage(imgSrc);
-  };
+};
 
   const handleMouseLeave = () => {
     setHoveredImage(null);

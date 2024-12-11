@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./index.scss";
+import Gallery from './Gallery';
 
 const items = [
   { name: "AWP | Dragon Lore", rarity: "legendary", chance: 0.26, color: "#FFD700", img: '/awp_dragon_lore_factory_new_81af54200c.png' },
@@ -155,7 +156,7 @@ function App() {
             </div>
           )}
 
-          
+        <Gallery items={items} />
         </>
       )}
     </div>
